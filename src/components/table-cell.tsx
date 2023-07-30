@@ -1,8 +1,9 @@
 "use client";
 import React, {createElement, PropsWithChildren, useMemo} from "react";
+import {Align} from "@/utils/types";
 
 type Props = {
-    align?: 'inherit' | 'left' | 'center' | 'right' | 'justify';
+    align?: Align;
     wrap?: boolean;
     key: string;
     sx?: Record<string, any>
@@ -23,12 +24,17 @@ export default function TableCell({
 
     const component = useMemo(() => {
         if (head) {
-            return createElement('th', {style: sx, key, scope: "col", className: "px-4 py-3"}, newChildren);
+            return createElement('th', {
+                style: sx,
+                key,
+                scope: "col",
+                className: `px-4 py-3 text-[${align ?? 'left'}] items-[${align ?? 'left'}]`
+            }, newChildren);
         }
         return createElement('td', {
             style: sx,
             key,
-            className: `px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white items-[${align}]`
+            className: `px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white items-[${align}] text-[${align ?? 'left'}]`
         }, newChildren);
     }, [head, newChildren, key, align, sx]);
     return component;

@@ -6,6 +6,8 @@ export type paginatorData = {
     limit?: number;
 };
 
+export type Align = 'inherit' | 'left' | 'center' | 'right' | 'justify'
+
 export interface CONSTANT_TABLE {
     id: string;
     label?: string;

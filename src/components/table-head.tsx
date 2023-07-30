@@ -21,7 +21,7 @@ const TableHead = ({headLabel}: Props) => {
                     width: headCell.width,
                     minWidth: headCell.minWidth,
                     flexDirection: 'row',
-                    ...(headLabel.at(-2).id === headCell.id && {
+                    ...(headLabel.at(-1).id === headCell.id && {
                         padding: 0,
                     }),
                 }}>

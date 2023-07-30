@@ -1,4 +1,4 @@
-import {PropsTableRow} from "@/utils/types";
+import {Align, PropsTableRow} from "@/utils/types";
 import React from "react";
 import TableCell from "@/components/table-cell";
 
@@ -46,7 +46,7 @@ export default function TableRow<T extends Record<string, unknown>>({
                     </td>
                 )}
                 {params.slice(0, -1).map((item, index) => (
-                    <TableCell key={`${item.id}-${index}`}>
+                    <TableCell key={`${item.id}-${index}`} align={item?.align as Align}>
                         {item.wrapComponent
                             ? item.wrapComponent(splitRowToParam(row, item.id), row?.id ?? row?._id ?? '')
                             : splitRowToParam(row, item.id)}

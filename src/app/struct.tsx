@@ -35,4 +35,5 @@ export const TABLE_HEAD_ORDERS: CONSTANT_TABLE[] = [
         label: 'F. Creación',
         align: 'center',
     },
+    {id: '', disableSort: true},
 ];
