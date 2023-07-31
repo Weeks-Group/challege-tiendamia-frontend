@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import TableHead from "@/components/table-head";
 import {ActionsProps, CONSTANT_TABLE, Paginator} from "@/utils/types";
@@ -13,7 +14,7 @@ interface ListPageProps<T, K = string> {
     paginator?: Paginator;
 }
 
-export default function Table<T extends Record<string, unknown>, K>({dataStruct, data}: ListPageProps<T, K>) {
+export  function Table<T extends Record<string, unknown>, K>({dataStruct, data}: ListPageProps<T, K>) {
     return (
         <div className="overflow-x-auto">
 
