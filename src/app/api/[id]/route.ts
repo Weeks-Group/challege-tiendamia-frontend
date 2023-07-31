@@ -6,7 +6,7 @@ export async function GET(
 ) {
     const slug = params.id
     console.log(slug)
-    const res = await fetch(`${String(process.env.API_URL)}/orders/findOne/${slug}`);
+    const res = await fetch(`${String(process.env.API_URL)}/orders/${slug}`);
     const data = await res.json();
     return NextResponse.json(data)
 }
