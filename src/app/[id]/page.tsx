@@ -1,5 +1,5 @@
-const fetchPostId = async (id: string) => {
-    const res = await fetch(`http://localhost:3000/api/${id}`, {
+const fetchOrderId = async (id: string) => {
+    const res = await fetch(`${String(process.env.API_URL)}/orders/${id}`, {
         next: {
             revalidate: 60
         }
@@ -11,13 +11,13 @@ const fetchPostId = async (id: string) => {
 }
 export default async function ItemDetail({params}: any) {
     const {id} = params
-    const post = await fetchPostId(id)
-    console.log(post)
+    const order = await fetchOrderId(id)
+    console.log(order)
 
     return (
         <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-            {post?.items?.map?.((element: any) => (
-                <div>
+            {order?.items?.map?.((element: any) => (
+                <div key={element.id}>
                     <h1>{element.item.title}</h1>
                 </div>
             ))}
