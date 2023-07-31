@@ -16,12 +16,12 @@ export default async function Home() {
     const orders = await fetchPost()
     console.log(orders)
     return (
-        <main className="bg-gray-50 dark:bg-gray-900 py-3 sm:py-5">
+        <main className="h-screen py-3 sm:py-5">
             <div className="px-4 mx-auto max-w-screen-2xl lg:px-12">
                 <div className="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
                     <TableToolbar/>
 
-                    <Table data={orders} dataStruct={TABLE_HEAD_ORDERS}/>
+                    {!!orders.length && <Table data={orders} dataStruct={TABLE_HEAD_ORDERS}/>}
                     <nav
                         className="flex flex-col items-start justify-between p-4 space-y-3 md:flex-row md:items-center md:space-y-0"
                         aria-label="Table navigation">
