@@ -56,6 +56,7 @@ API_URL=
 ![img_2.png](img_2.png)
 
 ### Detail Order
+![Alt text](image.png)
 
 To learn more about Next.js, take a look at the following resources:
 
