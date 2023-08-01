@@ -7,7 +7,6 @@ import dayjs from 'dayjs';
 export default async function ItemDetail({ params }: any) {
   const { id } = params;
   const order = await fetchOrderId(id ?? '');
-  console.log(order);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-12 md:p-24">
