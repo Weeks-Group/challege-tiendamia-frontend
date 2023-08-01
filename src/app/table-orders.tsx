@@ -5,7 +5,6 @@ import { Table } from '@/components/table';
 import { TABLE_HEAD_ORDERS } from './struct';
 import { fetchOrdersApprove, fetchOrdersTraveling, mutateDump } from '@/services';
 
-
 type Props = {
   data: any;
 };
@@ -13,11 +12,11 @@ type Props = {
 export const TableOrders = ({ data: orders }: Props) => {
   const [data, setData] = useState(orders);
   const handleFetch = async ({
-                               initial,
-                               last,
-                               reset,
-                               dump,
-                             }: {
+    initial,
+    last,
+    reset,
+    dump,
+  }: {
     initial?: string | Date | any;
     last?: string | Date | any;
     reset?: boolean;
@@ -30,20 +29,13 @@ export const TableOrders = ({ data: orders }: Props) => {
     }
     const resolve = await fetchOrdersApprove();
     return setData(resolve);
-
   };
 
   return (
     <>
-      <TableToolbar
-        quantity={data?.length || 0}
-        handleFetch={handleFetch}
-        orders={orders}
-      />
+      <TableToolbar quantity={data?.length || 0} handleFetch={handleFetch} orders={data} />
 
-      {data?.length > 0 && (
-        <Table dataStruct={TABLE_HEAD_ORDERS} data={data || null} />
-      )}
+      {data?.length > 0 && <Table dataStruct={TABLE_HEAD_ORDERS} data={data || null} />}
     </>
   );
 };
