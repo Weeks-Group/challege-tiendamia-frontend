@@ -41,7 +41,6 @@ API_URL=
 
 ## Screenshots
 
-## Learn More
 
 ### Table initial
 
@@ -57,6 +56,8 @@ API_URL=
 
 ### Detail Order
 ![Alt text](image.png)
+
+## Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
