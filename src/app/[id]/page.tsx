@@ -11,7 +11,7 @@ export default async function ItemDetail({ params }: any) {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-12 md:p-24">
-      <div className="rounded overflow-hidden shadow-lg h-full relative bg-gray-100 p-24 flex flex-col gap-2">
+      <div className="rounded overflow-hidden shadow-lg h-full relative bg-gray-100 dark:bg-black  p-24 flex flex-col gap-2">
         <h1 className="font-bold text-xl my-4 text-center">Order {order?.id}</h1>
         <div className="flex gap-12  items-center justify-center">
         <p className=" text-sm my-4 text-center">Status: {order?.status}</p>
@@ -49,7 +49,7 @@ export default async function ItemDetail({ params }: any) {
                 <div className="font-bold text-xl mb-2">{element?.item?.title ?? ''}</div>
                 <p className="text-gray-700 text-base">{element?.item?.description ?? ''}</p>
               </div>
-              <div className="px-6 pt-4 pb-2">
+              <div className="px-6 pt-4 pb-2 text-center">
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                   {currentFormat(element?.item?.price ?? 0)}
                 </span>

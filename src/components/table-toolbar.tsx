@@ -36,7 +36,7 @@ const TableToolbar = ({ quantity, handleFetch }: Props) => {
         </label>
         {isApprove ? (
           <button
-            className='font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700'
+            className='cursor-pointer px-2 py-1 font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none enabled:hover:bg-gray-100 enabled:hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:border-blue-500 dark:enabled:hover:text-white dark:enabled:hover:bg-gray-700 dark:text-blue-500'
             onClick={handleFetch}
           >
             Search
