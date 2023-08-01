@@ -53,7 +53,11 @@ export const TableOrders = ({ data: orders }: Props) => {
 
   return (
     <>
-      <TableToolbar quantity={data?.length || 0} handleFetch={handleFetch} />
+      <TableToolbar
+        quantity={data?.length || 0}
+        handleFetch={handleFetch}
+        orders={orders}
+      />
 
       {data.length > 0 && (
         <Table dataStruct={TABLE_HEAD_ORDERS} data={data || null} />
